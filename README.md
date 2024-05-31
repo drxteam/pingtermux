@@ -1,26 +1,26 @@
-# Ping Termux
+# PingTermux
 
-Skrip untuk melakukan ping jaringan dengan fitur tambahan seperti pewarnaan output berdasarkan latensi.
+PingTermux adalah sebuah alat sederhana yang memungkinkan Anda untuk melakukan ping dari perangkat Android menggunakan aplikasi Termux.
 
 ## Instalasi
 
-Jalankan perintah berikut di Termux:
+1. Pastikan Anda sudah menginstal [Termux](https://play.google.com/store/apps/details?id=com.termux) di perangkat Android Anda.
+2. Buka Termux dan jalankan perintah berikut untuk menginstal PingTermux:
 
-```sh
-$ apt update && apt upgrade -y
-$ pkg install git
-$ git clone https://github.com/drxteam/pingtermux.git
-$ ls
-$ cd pingtermux
-$ chmod +x gass
+```bash
+pkg install git
+git clone https://github.com/drxteam/pingtermux.git
+cd pingtermux
+chmod +x gass
+```
 
 ## Memulai
 
-Anda bisa menggunakan salah satu perintah dibawah ini saat berada dihalaman awal Termux
-
-```sh
-$ ./pingtermux/gass
-
+Gunakan perintah 
+```bash
+./pingtermux/gass
+```
 atau
-```sh
-$ sh /pingtermux/gass
+```bash
+sh /pingtermux/gass
+```
