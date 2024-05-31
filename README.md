@@ -1,11 +1,15 @@
-# pingtermux
+# Ping Termux
+
+Skrip untuk melakukan ping jaringan dengan fitur tambahan seperti pewarnaan output berdasarkan latensi.
+
+## Instalasi
+
+Jalankan perintah berikut di Termux:
+
+```sh
 $ apt update && apt upgrade -y
 $ pkg install git
 $ git clone https://github.com/drxteam/pingtermux.git
 $ ls
 $ cd pingtermux
-$ chxmod +x gass
-
-# START
-This command is for the start page of termux
-$ ./pingtermux/gass or sh /pingtermux/gass
+$ chmod +x gass
