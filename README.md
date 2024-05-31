@@ -24,3 +24,7 @@ atau
 ```bash
 sh /pingtermux/gass
 ```
+## Untuk berhenti
+```bash
+CTRL + C
+```
