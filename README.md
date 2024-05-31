@@ -13,3 +13,14 @@ $ git clone https://github.com/drxteam/pingtermux.git
 $ ls
 $ cd pingtermux
 $ chmod +x gass
+
+## Memulai
+
+Anda bisa menggunakan salah satu perintah dibawah ini saat berada dihalaman awal Termux
+
+```sh
+$ ./pingtermux/gass
+
+atau
+```sh
+$ sh /pingtermux/gass
