@@ -1,0 +1,50 @@
+#!/bin/bash
+
+# Fungsi untuk menampilkan pesan toast (menggunakan echo sebagai gantinya)
+function toast {
+    echo "$1"
+}
+
+# Fungsi untuk menampilkan animasi countdown
+function countdown {
+    local seconds=$1
+    while [ $seconds -gt 0 ]; do
+        echo -ne "Siap menghitung $seconds detik\r"
+        sleep 1
+        seconds=$((seconds - 1))
+    done
+    echo -ne "Memulai menjalankan PING sekarang...    \n"
+}
+
+# Menampilkan pesan toast
+toast "Memulai menjalankan PING dalam 5 detik"
+countdown 5
+
+# Alamat IP dan parameter ping
+IP="43.255.196.45"
+COUNT=99999
+INTERVAL=0.6
+
+# Fungsi untuk mewarnai output berdasarkan waktu respons
+function color_output {
+    local latency=$1
+    local latency_int=${latency%.*}  # Mendapatkan bagian integer dari latency
+
+    if [ $latency_int -gt 50 ]; then
+        echo -e "\e[31m$latency ms\e[0m"  # Merah
+    elif [ $latency_int -lt 35 ]; then
+        echo -e "\e[32m$latency ms\e[0m"  # Lemon (Hijau)
+    else
+        echo "$latency ms"  # Tidak berwarna
+    fi
+}
+
+# Memulai ping dan mewarnai output
+ping -c $COUNT -i $INTERVAL $IP | while read -r line; do
+    if [[ $line =~ time=([0-9]+\.[0-9]+) ]]; then
+        latency=${BASH_REMATCH[1]}
+        color_output $latency
+    else
+        echo "$line"
+    fi
+done
